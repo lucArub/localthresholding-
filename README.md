@@ -279,32 +279,13 @@ algorithms. Maxima points can be easily graphically determined. Note
 that w and k ranges need to be customized for each image to be
 binarized: these data is about a
 .](images/performances/F2_3.png "fig:"){#Figure 7:Accuracy, PSNR and F-score (<img src="https://latex.codecogs.com/svg.image?\beta&space;=&space;2" title="\beta = 2" /> surface plots for the three
-algorithms. Maxima points can be easily graphically determined. Note
-that w and k ranges need to be customized for each image to be
-binarized: these data is about a }
+algorithms. Maxima points can be easily graphically determined.  }
 
-Measurements of PSNR are represented also in
-fig.[8] from which we can observe that:
 
--   Singh and Sauvola binarization algorithms give very similar results,
-    with similar parameters. Niblack binarization is generally worse,
-    according to these quality metrics.
-
--   Singh algorithm is more sensible than Sauvola's to k changes (the
-    peak is narrower).
-
--   Niblack algorithm needs very big w values to get good results, and
-    this makes the algorithm much more time-consuming.
-
-![Comparison of PSNR values for the three algorithms. Singh and Sauvola
-binarization offers PSNR up to 18db, Niblack performances results to be
-much worse.](images/performances/PSNR_3(2d).png){Figure 8:Comparison of PSNR values for the three algorithms. Singh and Sauvola
-binarization offers PSNR up to 18db, Niblack performances results to be
-much worse
 
 ![Binarized images (top: Singh, center: Sauvola, bottom: Niblack) with
 the best set of input variables (PSNR
-maximized).](images/performances/best_res.png){Figure 9: from top: Singh,Sauvola,Niblack) with
+maximized).](images/performances/best_res.png){Figure 8: from top: Singh,Sauvola,Niblack) with
 the best set of input variables (PSNR
 maximized).
 
