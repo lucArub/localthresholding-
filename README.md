@@ -254,7 +254,7 @@ These three parameters are choosen to demonstrate that this could a be a valid a
 ### Results
 
 The obtained results obviously depend on the input parameters of the
-algorithms (window size <img src="https://latex.codecogs.com/svg.image?w" title="w" /> and parameter <img src="https://latex.codecogs.com/svg.image?k" title="k" />. The simplest way to find the
+algorithms (window size <img src="https://latex.codecogs.com/svg.image?w" title="w" /> and parameter <img src="https://latex.codecogs.com/svg.image?k" title="k" />. ) The simplest way to find the
 best input parameters set (for each different algorithm) is to iterate
 the binarization processing for a certain range of <img src="https://latex.codecogs.com/svg.image?w" title="w" /> and <img src="https://latex.codecogs.com/svg.image?k" title="k" /> to calculate
 the 3 performance metrics (A/F-score/PSNR) for each obtained image and
