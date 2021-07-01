@@ -12,7 +12,7 @@ al., ''A New Local Adaptive Thresholding Technique in Binarization'',
 In particular the attention is focused on local thresholding techniques.
 To test the algorithms it is considered not only their calculus speed, but
 also their accuracy in terms of number of pixels well converted after
-the application of the thresholding. 
+the application of the thresholding.
 
 
 # 1.Theoretical Aspects
