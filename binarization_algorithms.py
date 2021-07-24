@@ -13,7 +13,7 @@ from skimage.filters import (threshold_niblack,
 
 img_number = 0 # variable that counts the number of images in a directory
 path = 'yourpath/*.*' # path/*.* in order to slied all the images 
-
+# bias
 
 w = 25
 bias = 0.2
