@@ -14,6 +14,27 @@ To test the algorithms it is considered not only their calculus speed, but
 also their accuracy in terms of number of pixels well converted after
 the application of the thresholding.
 
+# File structure
+
+
+ - binarization_algorithms.py** 
+      in which are implemented the local thresholding algorithms.
+      This script use the methods presents in the filter_mod.py** script in which are present: 
+      - the _only_mean function used for the implementation of Singh method.
+      - the _mean_std_slow function used for the time comparison test --> sauvola_slow, niblack_slow
+
+In the test directory are present the following:  
+ - timing_comparison.py** 
+      in which are evalueted the algorithms speed's.
+
+ - binarization-performances.py** 
+      in which are calculated the 3 performance metrics (A/F-score/PSNR).
+
+The _only_mean function has been tested on a uniform image and as it is expected return as a output the same input image.
+
+
+    
+
 
 # 1.Theoretical Aspects
 
@@ -87,19 +108,9 @@ Using the integral sum image for finding local mean of the neighbouring pixels i
 speeds up and achieves binarization speed close to the global methods, as displayed in the result section (4). Furthermore, using this approach, the
 computation of <img src="https://latex.codecogs.com/svg.image?m" title="m" /> not depend on local window size.
 Because of these important advantages of using <img src="https://latex.codecogs.com/svg.image?g" title="g" /> the algorithms are implemented  for all the local thresholding techniques using the integralsum image (fast versions). We also implemented Niblack's and Sauvola's techniques without <img src="https://latex.codecogs.com/svg.image?g" title="g" />(slow versions) for comparison.
-# 2.Files structure's
-The project is structured in three python scripts.
 
-**1 - binarization_algorithms.py** 
-      in which are implemented the local thresholding algorithms.
 
-**2 - timing_comparison.py** 
-      in which are evalueted the algorithms speed's.
-
-**3 - binarization-performances.py** 
-      in which are calculated the 3 performance metrics (A/F-score/PSNR).
       
-
 
 # Binarization algorithms
 
