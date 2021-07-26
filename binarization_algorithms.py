@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+# USAGE: python binarization_algorithms.py path_images/ algorithm[nib,sau,singh,otsu] windows_size bias
+# EXAMPLE: python binarization_algorithms.py images/ singh 25 0.2 
+#w = 25
+#bias = 0.2
 
 import glob     
 import sys    
@@ -13,14 +16,10 @@ from skimage.filters import (threshold_niblack,
                              )
 
 
-img_number = 0 # variable that counts the number of images in a directory
-#path = 'yourpath/*.*' # path/*.* in order to slied all the images 
-# bias
-
-#w = 25
-#bias = 0.2
+img_number = 0 
 
 script_name, path, alg, w, bias = sys.argv
+
 path2 = path + "/*.*"
 
 print(type(bias))
