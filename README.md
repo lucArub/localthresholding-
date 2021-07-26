@@ -17,6 +17,7 @@ the application of the thresholding.
 # HOW TO USE: 
 
 ***SKIMAGE MOD for BINARIZATION ALGORITHMS COMPARISON***
+################################# WHAT'S NEW 
 
 This mod will add to your skimage library the definition of a new local adaptive
 thresholding algorithm (Singh et al. [1]). 
@@ -24,9 +25,6 @@ thresholding algorithm (Singh et al. [1]).
 ###### In order to use these scripts you will have to modify your skimage library: ######
 ------> substitute the files in C:/user/.../skimage/filter
 	with those (homonyms) contained in "package mods".
-
-
-################################## WHAT'S NEW 
 
 The new functions that have been added in the thresholding.py are the following :
 
@@ -143,12 +141,12 @@ The new functions that have been added in the thresholding.py are the following 
     -script to process images with different algorithms.
     
       
-In the test directory are present the following:  
+In the test directory are present :  
 
  - timing_comparison.py
       in which are evalueted the algorithms speed's.
 
- - binarization_performances.py** 
+ - binarization_performances.py*
       in which are calculated the 3 performance metrics (A/F-score/PSNR).
 
 The _only_mean function has been tested on a uniform image and as it is expected return as a output the same input image.
