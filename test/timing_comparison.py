@@ -11,11 +11,11 @@ import skimage.io
 import skimage.viewer
 from skimage.filters import (threshold_niblack,
                              threshold_sauvola,
-                             threshold_otsu)
+                             threshold_otsu,
+                             threshold_singh,
+                             threshold_niblack_slow,
+                             threshold_sauvola_slow)
 
-from filter_mod import (threshold_singh,
-                        threshold_niblack_slow,
-                        threshold_sauvola_slow)
 
 img_number = 0 # counter
 path = 'yourpath/*.*'
