@@ -27,7 +27,7 @@ thresholding algorithm (Singh et al. [1]).
 	with those (homonyms) contained in "package mods".
 
 The new functions that have been added in the thresholding.py are the following :
-
+The meaning of mean only is explained in the theoretical aspects.
 \`\`\`
 
     def _only_mean(image, w):
