@@ -9,8 +9,9 @@ import skimage.viewer
 from skimage.filters import (threshold_niblack,
                              threshold_sauvola,
                              threshold_otsu
+                             threshold_singh
                              )
-from filter_mod import threshold_singh
+
 
 img_number = 0 # variable that counts the number of images in a directory
 #path = 'yourpath/*.*' # path/*.* in order to slied all the images 
