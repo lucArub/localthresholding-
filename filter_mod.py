@@ -1,6 +1,7 @@
 
 import numpy as np
-from skimage.filters import thresholding
+import skimage.filters
+
 
 
 def _only_mean(image, w):
@@ -25,23 +26,23 @@ def _only_mean(image, w):
 
     if not isinstance(w, thresholding.Iterable):
         w = (w,) * image.ndim
-    thresholding._validate_window_size(w)
+    _validate_window_size(w)
 
     pad_width = tuple((k // 2 + 1, k // 2) for k in w)
     padded = np.pad(image.astype('float'), pad_width,
                     mode='reflect')
     #padded_sq = padded * padded
 
-    integral = thresholding.integral_image(padded)
+    integral = integral_image(padded)
     #integral_sq = integral_image(padded_sq)
 
     kern = np.zeros(tuple(k + 1 for k in w))
-    for indices in thresholding.itertools.product(*([[0, -1]] * image.ndim)):
+    for indices in titertools.product(*([[0, -1]] * image.ndim)):
         kern[indices] = (-1) ** (image.ndim % 2 != np.sum(indices) % 2)
 
     total_window_size = np.prod(w)
-    sum_full = thresholding.ndi.correlate(integral, kern, mode='constant')
-    m = thresholding.crop(sum_full, pad_width) / total_window_size
+    sum_full = ndi.correlate(integral, kern, mode='constant')
+    m = crop(sum_full, pad_width) / total_window_size
     #sum_sq_full = ndi.correlate(integral_sq, kern, mode='constant')
     #g2 = crop(sum_sq_full, pad_width) / total_window_size
     # Note: we use np.clip because g2 is not guaranteed to be greater than
@@ -72,9 +73,9 @@ def _mean_std_slow(image, w):
         Local mean of the image.
     """
 
-    if not isinstance(w, thresholding.Iterable):
+    if not isinstance(w, Iterable):
         w = (w,) * image.ndim
-    thresholding._validate_window_size(w)
+    _validate_window_size(w)
 
     pad_width = tuple((k // 2 + 1, k // 2) for k in w)
     padded = np.pad(image.astype('float'), pad_width,
@@ -84,10 +85,10 @@ def _mean_std_slow(image, w):
     kern = np.ones(tuple(k + 1 for k in w))
 
     total_window_size = np.prod(w)
-    sum_full = thresholding.ndi.correlate(padded, kern, mode='constant')
-    m = thresholding.crop(sum_full, pad_width) / total_window_size
-    sum_sq_full = thresholding.ndi.correlate(padded_sq, kern, mode='constant')
-    g2 = thresholding.crop(sum_sq_full, pad_width) / total_window_size
+    sum_full = ndi.correlate(padded, kern, mode='constant')
+    m = crop(sum_full, pad_width) / total_window_size
+    sum_sq_full = ndi.correlate(padded_sq, kern, mode='constant')
+    g2 = crop(sum_sq_full, pad_width) / total_window_size
     s = np.sqrt(np.clip(g2 - m * m, 0, None))
     return m, s
 
@@ -264,7 +265,7 @@ def threshold_sauvola_slow(image, window_size=15, k=0.2, r=None):
     >>> binary_image = image > t_sauvola
     """
     if r is None:
-        imin, imax = thresholding.dtype_limits(image, clip_negative=False)
+        imin, imax = dtype_limits(image, clip_negative=False)
         r = 0.5 * (imax - imin)
     m, s = _mean_std_slow(image, window_size)
     return m * (1 + k * ((s / r) - 1))
