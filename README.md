@@ -31,7 +31,6 @@ The new functions that have been added in the thresholding.py are the following 
 1) _only_mean 
 
 \`\`\`
-
 def _only_mean(image, w):
     """Return local mean of each pixel using a
     neighborhood defined by a rectangular window size ``w``.
@@ -139,12 +138,11 @@ def threshold_singh(image, window_size=15, k=0.2, r=None):
    
 
 
-
-
 # Project Structure
 
-- binarization_algorithms.py**    
+- binarization_algorithms.py  
     -script to process images with different algorithms
+    usage: python binarization_algorithm.py /yourpath algorithm[singh,sau,nib,otsu] window_size bias
       
 In the test directory are present the following:  
  - timing_comparison.py** 
