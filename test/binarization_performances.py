@@ -30,6 +30,7 @@ F1-score: harmonic mean between precision and sensitivity       [(2*p*s/(p+s))]
 
 """
 
+
 from matplotlib import pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
@@ -40,8 +41,9 @@ import skimage.viewer
 from skimage.filters import (threshold_niblack,
                              threshold_sauvola,
                              threshold_otsu
+                             threshold_singh
                              )
-from filter_mod import threshold_singh
+
 
 im_path = 'yourpath/*.*'  #image path
 GT_path = 'yourpath/*.*'  #ground_truth path
