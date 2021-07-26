@@ -23,7 +23,7 @@ This mod will add to your skimage library the definition of a new local adaptive
 thresholding algorithm (Singh et al. [1]). 
 
 ###### In order to use these scripts you will have to modify your skimage library: ######
-------> substitute the files in C:/user/.../skimage/filter
+------> substitute the files __init__.py thresholding.py in User/.../skimage/filter
 	with those (homonyms) contained in "package mods".
 
 The new functions that have been added in the thresholding.py are the following :
@@ -137,10 +137,9 @@ The new functions that have been added in the thresholding.py are the following 
 
 # Project Structure
 
-- binarization_algorithms.py  
+  binarization_algorithms.py  
     -script to process images with different algorithms.
     
-      
 In the test directory are present :  
 
  - timing_comparison.py
