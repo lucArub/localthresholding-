@@ -20,6 +20,7 @@ the application of the thresholding.
 
 This mod will add to your skimage library the definition of a new local adaptive
 thresholding algorithm (Singh et al. [1]). 
+
 ###### In order to use these scripts you will have to modify your skimage library: ######
 ------> substitute the files in C:/user/.../skimage/filter
 	with those (homonyms) contained in "package mods".
@@ -28,7 +29,6 @@ thresholding algorithm (Singh et al. [1]).
 ################################## WHAT'S NEW 
 
 The new functions that have been added in the thresholding.py are the following :
-1) _only_mean 
 
 \`\`\`
 
@@ -79,7 +79,7 @@ The new functions that have been added in the thresholding.py are the following 
     #s = np.sqrt(np.clip(g2 - m * m, 0, None))
     return m#, s
 
-2) 
+
 \`\`\`
 
     def threshold_singh(image, window_size=15, k=0.2, r=None):
