@@ -33,7 +33,7 @@ The new functions that have been added in the thresholding.py are the following 
 \`\`\`
 
     def _only_mean(image, w):
-    
+
       """Return local mean of each pixel using a
       neighborhood defined by a rectangular window size ``w``.
       The algorithm uses integral images to speedup computation.
@@ -79,31 +79,31 @@ The new functions that have been added in the thresholding.py are the following 
     #s = np.sqrt(np.clip(g2 - m * m, 0, None))
     return m#, s
 
-2) Threshold Singh
+2) 
 \`\`\`
 
-def threshold_singh(image, window_size=15, k=0.2, r=None):
-    """Applies Singh local threshold to an array.
+    def threshold_singh(image, window_size=15, k=0.2, r=None):
+       """Applies Singh local threshold to an array.
 
-    The threshold T is calculated for every pixel in the image using
-    the following formula:
+       The threshold T is calculated for every pixel in the image using
+       the following formula:
 
-        T = m(x,y) * (1 + k * ((d(x,y) / 1 - d(x,y)) - 1))
+           T = m(x,y) * (1 + k * ((d(x,y) / 1 - d(x,y)) - 1))
 
-    where m(x,y) and d(x,y) are the local mean and the local deviation of
-    pixel (x,y) neighborhood defined by a rectangular window with size wxw
-    centered around the pixel. k is a configurable parameter
-    that weights the effect of standard deviation.
+       where m(x,y) and d(x,y) are the local mean and the local deviation of
+       pixel (x,y) neighborhood defined by a rectangular window with size wxw
+       centered around the pixel. k is a configurable parameter
+       that weights the effect of standard deviation.
    
-    Parameters
-    ----------
-    image : ndarray
-        Input image.
-    window_size : int, or iterable of int, optional
+       Parameters
+       ----------
+       image : ndarray
+           Input image.
+        window_size : int, or iterable of int, optional
         Window size specified as a single odd integer (3, 5, 7, …),
         or an iterable of length ``image.ndim`` containing only odd
         integers (e.g. ``(1, 5, 5)``).
-    k : float, optional
+        k : float, optional
         Value of the positive parameter k.
 
     Returns
@@ -137,27 +137,24 @@ def threshold_singh(image, window_size=15, k=0.2, r=None):
 
 
 
-   
-
-
 # Project Structure
 
 - binarization_algorithms.py  
-    -script to process images with different algorithms
-    usage: python binarization_algorithm.py /yourpath algorithm[singh,sau,nib,otsu] window_size bias
+    -script to process images with different algorithms.
+    
       
 In the test directory are present the following:  
- - timing_comparison.py** 
+
+ - timing_comparison.py
       in which are evalueted the algorithms speed's.
 
  - binarization_performances.py** 
       in which are calculated the 3 performance metrics (A/F-score/PSNR).
+
 The _only_mean function has been tested on a uniform image and as it is expected return as a output the same input image.
 
 DIBCO 2009 --> directory in which you find test images with the corresponding GT.
 images --> directory with images output.
-
-    
 
 
 # 1.Theoretical Aspects
