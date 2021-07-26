@@ -30,7 +30,8 @@ thresholding algorithm (Singh et al. [1]).
 The new functions that have been added in the thresholding.py are the following :
 1) _only_mean 
 
-\`\`\`python
+\`\`\`
+
 def _only_mean(image, w):
     """Return local mean of each pixel using a
     neighborhood defined by a rectangular window size ``w``.
@@ -78,7 +79,7 @@ def _only_mean(image, w):
     return m#, s
 
 2) Threshold Singh
-\`\`\`python
+\`\`\`
 
 def threshold_singh(image, window_size=15, k=0.2, r=None):
     """Applies Singh local threshold to an array.
