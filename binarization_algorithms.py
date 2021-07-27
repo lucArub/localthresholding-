@@ -42,7 +42,6 @@ for file in glob.glob(path2):
 
   if alg == 'nib':
 
-    print("ok") 
     t_niblack = threshold_niblack(image1, window_size=int(w), k=float(bias)) #  T(x,y) niblack
     image1[image1 < t_niblack]=0 # threshold  
     image1[image1 > t_niblack]=255       
