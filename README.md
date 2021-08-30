@@ -19,10 +19,6 @@ the application of the thresholding.
 ***SKIMAGE MOD for BINARIZATION ALGORITHMS COMPARISON***
 ################################# WHAT'S NEW 
 
-###### In order to use these scripts you will have to modify your skimage library: ######
-------> substitute the files __init__.py thresholding.py in User/.../skimage/filter
-	with those (homonyms) contained in "package mods".
-
 The new functions that have been added in the thresholding.py are the following :
 The meaning of mean only is explained in the theoretical aspects.
 
