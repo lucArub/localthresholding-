@@ -16,59 +16,22 @@ the application of the thresholding.
 
 # HOW TO USE: 
 
+Please download the scikit-image  :
+https://github.com/lucArub/scikit-image/tree/patch-1
+
+
+
 ***SKIMAGE MOD for BINARIZATION ALGORITHMS COMPARISON***
 ################################# WHAT'S NEW 
 
-The new functions that have been added in the thresholding.py are the following :
+The new function that have been added in the thresholding.py are [Singh et
+al., ''A New Local Adaptive Thresholding Technique in Binarization'',
+,International Journal of Computer Science Issues,
+2011.](https://www.researchgate.net/publication/220485031_A_New_Local_Adaptive_Thresholding_Technique_in_Binarization) 
+A modification in the _mean_std function has been required in order to return _mean_only
+
 The meaning of mean only is explained in the theoretical aspects.
 
-
-    def _only_mean(image, w):
-
-      """Return local mean of each pixel using a
-      neighborhood defined by a rectangular window size ``w``.
-      The algorithm uses integral images to speedup computation.
-
-      Parameters
-      ----------
-      image : ndarray
-          Input image.
-        w : int, or iterable of int
-        Window size specified as a single odd integer (3, 5, 7, …),
-        or an iterable of length ``image.ndim`` containing only odd
-        integers (e.g. ``(1, 5, 5)``).
-
-       Returns
-       -------
-       m : ndarray of float, same shape as ``image``
-        Local mean of the image.
-         """
-
-    if not isinstance(w, thresholding.Iterable):
-        w = (w,) * image.ndim
-    _validate_window_size(w)
-
-    pad_width = tuple((k // 2 + 1, k // 2) for k in w)
-    padded = np.pad(image.astype('float'), pad_width,
-                    mode='reflect')
-    #padded_sq = padded * padded
-
-    integral = integral_image(padded)
-    #integral_sq = integral_image(padded_sq)
-
-    kern = np.zeros(tuple(k + 1 for k in w))
-    for indices in titertools.product(*([[0, -1]] * image.ndim)):
-        kern[indices] = (-1) ** (image.ndim % 2 != np.sum(indices) % 2)
-
-    total_window_size = np.prod(w)
-    sum_full = ndi.correlate(integral, kern, mode='constant')
-    m = crop(sum_full, pad_width) / total_window_size
-    #sum_sq_full = ndi.correlate(integral_sq, kern, mode='constant')
-    #g2 = crop(sum_sq_full, pad_width) / total_window_size
-    # Note: we use np.clip because g2 is not guaranteed to be greater than
-    # m*m when floating point error is considered
-    #s = np.sqrt(np.clip(g2 - m * m, 0, None))
-    return m#, s
 
 
 
