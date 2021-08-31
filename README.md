@@ -24,7 +24,7 @@ https://github.com/lucArub/scikit-image/tree/patch-1
 ***SKIMAGE MOD for BINARIZATION ALGORITHMS COMPARISON***
 ################################# WHAT'S NEW 
 
-The new function that have been added in the thresholding.py are [Singh et
+The new function that have been added in the scikit-image library is [Singh et
 al., ''A New Local Adaptive Thresholding Technique in Binarization'',
 ,International Journal of Computer Science Issues,
 2011.](https://www.researchgate.net/publication/220485031_A_New_Local_Adaptive_Thresholding_Technique_in_Binarization) 
@@ -83,7 +83,7 @@ The meaning of mean only is explained in the theoretical aspects.
     >>> binary_image = image > t_singh
     """
     
-    m = _only_mean(image, window_size)
+    m = _mean_std(image, window_size, mean_only=True)
     d = image - m
     
     return m * (1 + k * ((d / 1-d) - 1))
@@ -103,7 +103,6 @@ In the test directory are present :
  - binarization_performances.py*
       in which are calculated the 3 performance metrics (A/F-score/PSNR).
 
-The _only_mean function has been tested on a uniform image and as it is expected return as a output the same input image.
 
 DIBCO 2009 --> directory in which you find test images with the corresponding GT.
 images --> directory with images output.
