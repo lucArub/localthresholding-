@@ -279,7 +279,7 @@ PTs; In the table below are shown measured PTs for a very big window
 size (w=91):
 
 
-![image](images/timing/time_comparison_fast_linear_N50.png){Figure[4]:Fast algorithms PTs measured over a large range of w (50-runs average
+![image](images/timing/N50.png){Figure[4]:Fast algorithms PTs measured over a large range of w (50-runs average
 results).}
 
 
