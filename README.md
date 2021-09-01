@@ -222,7 +222,7 @@ Especially for the comparison between fast algorithms, it was important to provi
 
 From fig.[2] it is evident that for the slow algorithms, which do not use integral sum, PT shows a strong (at least quadratic) dependence on <img src="https://latex.codecogs.com/svg.image?w" title="w" /> while the fast versions, the Singh and the global algorithms PTs are approximately constant and of the same order of magnitude <img src="https://latex.codecogs.com/svg.image?10^{-2}s" title="10^{-2}s" />
 
-![image](images/timing/all_linear_double.png){Figure[2]: PTs (y-axis) vs size of the window w (x-axis) for a 600x350px test
+![image](images/timing/time_comparison_(all linear)_N=10_w=3-39 (600x350px).png ){Figure[2]: PTs (y-axis) vs size of the window w (x-axis) for a 600x350px test
 image. Each point is the result of the average computed over 10
 different measurements. The dashed lines represent the PTs of the slow
 versions of Niblack and Sauvola algorithms. The continous lines
